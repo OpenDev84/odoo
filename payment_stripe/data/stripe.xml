@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data noupdate="1">
+        <record id="payment_acquirer_stripe" model="payment.acquirer">
+            <field name="name">Pay with Credit Card</field>
+            <field name="provider">stripe</field>
+            <field name="company_id" ref="base.main_company"/>
+            <field name="view_template_id" ref="stripe_acquirer_button"/>
+            <field name="validation">manual</field>
+            <field name="environment">test</field>
+            <field name="website_published" eval="True"/>
+            <field name="pre_msg"><![CDATA[
+<h3>Card Authorization</h3><div>We are not charging your account yet. This is just taking an authorization. We will charge you once the order and quantities has been confirmed. </div>]]>
+            </field>
+            <field name="post_msg"><![CDATA[
+<h3>Payment method verified</h3>
+<h4><span style="font-weight: normal;">We have confirmed your mode of payment. We have taken an authorization and will charge you only after your order has been confirmed. Please note that some banks might show authorizations as charges; however, the final charged will be confirmed when the transaction is settled.</span></h4>]]>
+            </field>
+        </record>
+
+    </data>
+</openerp>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="view_config_settings" model="ir.ui.view">
+            <field name="name">zopim settings</field>
+            <field name="model">zopim.config.settings</field>
+            <field name="priority" eval="20"/>
+            <field name="arch" type="xml">
+                <form string="Configure Zopim Live Chat" class="oe_form_configuration">
+		    <header>
+                        <button string="Apply" type="object" name="execute" class="oe_highlight"/>
+                        or
+                        <button string="Cancel" type="object" name="cancel" class="oe_link"/>
+                    </header>
+                    <group string="General">
+			<field name="key" />
+                    </group>
+                    <group string="Aparience">
+			<field name="theme"/>
+			<field name="layout"/>
+			<field name="color_primary" widget="color" placeholder="#FFFFFF"/>
+			<field name="color_badge" widget="color" placeholder="#FFFFFF"/>
+                    </group>
+		    <group string="Supported Languages">
+			<field name="lang"/>
+                    </group>
+		    <group string="Greetings">
+			<field name="online_greetings"/>
+			<field name="offline_greetings"/>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <record id="action_config_settings" model="ir.actions.act_window">
+            <field name="name">Configure Zopim Live Chat</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">zopim.config.settings</field>
+            <field name="view_mode">form</field>
+            <field name="target">inline</field>
+        </record>
+
+        <menuitem id="base.menu_project_config" name="Zopim Live Chat" parent="base.menu_config"
+            sequence="10" action="action_config_settings"/>
+
+    </data>
+</openerp>

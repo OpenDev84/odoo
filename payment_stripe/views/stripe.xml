@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data noupdate="1">
+
+        <template id="stripe_acquirer_button">
+            <form t-if="acquirer" t-att-action="tx_url" method="post" target="_self" id="payment-form">
+                <t t-if="tx_values.get('return_url')">
+                    <input type='hidden' id="return_url" name='return_url' t-att-value='tx_values["return_url"]'/>
+                </t>
+                <input type='hidden' id="stripe_key" name='stripe_key' t-att-value='tx_values["stripe_key"]'/>
+                <input type='hidden' id="reference" name='reference' t-att-value='reference'/>
+                <input type='hidden' id='amount' name='amount' t-att-value='amount or "0.0"'/>
+                <input type='hidden' id='currency' name='currency' t-att-value='currency.name'/>
+                <input type='hidden' id='email' name='email' t-att-value="tx_values['email']"/>
+                <input type='hidden' id='company' name='company' t-att-value="res_company.name"/>
+                <!-- submit -->
+                <button id="stripe_button"  type="submit" width="100px"
+                    t-att-class="submit_class">
+                    <img t-if="not submit_txt" src="/payment_stripe/static/src/img/stripe_icon.png"/>
+                    <span t-if="submit_txt"><t t-esc="submit_txt"/> <span class="fa fa-long-arrow-right"/></span>
+                </button>
+            </form>
+        </template>
+        <template id="assets_common" name="global assets" inherit_id="web.assets_common">
+	    <xpath expr="." position="inside">
+		<script type="text/javascript" src="https://checkout.stripe.com/checkout.js"></script>
+		<script src="/payment_stripe/static/src/js/stripe.js"></script>
+	    </xpath>
+	</template>
+    </data>
+</openerp>

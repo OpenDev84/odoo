@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <record id="view_stripe__config_settings" model="ir.ui.view">
+            <field name="name">Stripe platform settings</field>
+            <field name="model">payment_stripe.config.settings</field>
+            <field name="arch" type="xml">
+                <form string="Configure Stripe platform" class="oe_form_configuration">
+                    <header>
+                        <button string="Apply" type="object" name="execute" class="oe_highlight"/>
+                        or
+                        <button string="Cancel" type="object" name="cancel" class="oe_link"/>
+                    </header>
+		    <sheet>
+			<div>
+			    <group>
+				<field name="environment"/>
+			    </group>
+			    <group string="Test">
+				<field name="test_sk" attrs = "{'required':[('environment','=','test')]}" />
+				<field name="test_pk" attrs = "{'required':[('environment','=','test')]}" />
+			    </group>
+			    <group string="Production">
+				<field name="production_sk" attrs = "{'required':[('environment','=','production')]}" />
+				<field name="production_pk" attrs = "{'required':[('environment','=','production')]}" />
+			    </group>
+			</div>
+		    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="action_stripe_configuration" model="ir.actions.act_window">
+            <field name="name">Payment Platform Settings</field>
+            <field name="res_model">payment_stripe.config.settings</field>
+            <field name="view_mode">form</field>
+            <field name="target">inline</field>
+        </record>
+
+        <menuitem id="menu_stripe_configuration" parent="base.menu_config"
+            sequence="100" action="action_stripe_configuration"/>
+
+    </data>
+</openerp>
