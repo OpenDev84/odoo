@@ -1,0 +1,9 @@
+<templates>
+    <t t-extend="UserMenu" >
+        <t t-jquery="ul.dropdown-menu" t-operation="append">
+	    <li class="session_lock">
+               	<a href="#" data-menu="lock">Lock Session</a>
+	    </li>
+        </t>
+    </t>
+</templates>

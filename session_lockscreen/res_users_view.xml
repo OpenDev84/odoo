@@ -1,0 +1,18 @@
+<openerp>
+    <data>
+	<record model="ir.ui.view" id="view_users_form_inherit">
+            <field name="name">res.users.form</field>
+            <field name="model">res.users</field>
+            <field name="inherit_id" ref="base.view_users_form"/>                           
+            <field name="arch" type="xml">
+		<group>
+		    <field name="pin"/>
+                </group>
+            </field>
+        </record> 
+        <record model="ir.actions.client" id="action_session_lock">
+            <field name="name">Lock Session</field>
+            <field name="tag">session.lock</field>
+        </record>
+    </data>
+</openerp>

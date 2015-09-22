@@ -1,0 +1,35 @@
+<templates>
+<t t-name="Lock">
+    <div class="oe_lock_container">
+    <p class="oe_login_error_message"></p>
+    <div class="oe_lock_board_container modal-content">
+	<div class="oe_single_form_logo"><img class="oe_lockscreen_avatar" src='/web/static/src/img/placeholder.png'/></div>
+	<hr/>
+	    <input name="pin_value" type="password" class="pin_value_input"/>
+				
+	<table class="pin_code_board">
+	    <tr>
+		<td><button value="1">1</button></td>
+		<td><button value="2">2</button></td>
+		<td><button value="3">3</button></td>
+	    </tr>
+	    <tr>
+		<td><button value="4">4</button></td>
+		<td><button value="5">5</button></td>
+		<td><button value="6">6</button></td>
+	    </tr>
+	    <tr>
+		<td><button value="7">7</button></td>
+		<td><button value="8">8</button></td>
+		<td><button value="9">9</button></td>
+	    </tr>
+	    <tr>
+		<td><button class="clear_button" value="clear"><img src='/session_lockscreen/static/src/img/clear.png'/></button></td>
+		<td><button value="0">0</button></td>
+		<td><button name="submit" class="unlock_button"><img src='/session_lockscreen/static/src/img/unlock.png'/></button></td>
+	    </tr>
+	</table>				
+    </div>
+    </div>
+</t>
+</templates>

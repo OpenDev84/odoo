@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+	<template id="assets_backend" name="lockscreen assets" inherit_id="web.assets_backend">
+            <xpath expr="." position="inside">
+                <script type="text/javascript" src="/session_lockscreen/static/src/js/lockscreen.js"></script>
+                <link rel="stylesheet" href="/session_lockscreen/static/src/css/lockscreen.css"/>
+            </xpath>
+        </template>
+    </data>
+</openerp>
