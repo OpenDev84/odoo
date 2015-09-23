@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+	<template id="assets_frontend" inherit_id="website.assets_frontend" name="Shop">
+	    <xpath expr="." position="inside">
+		<script type="text/javascript" src="/website_sale_delete_cart_line/static/src/js/website_sale.js"></script>
+	    </xpath>
+	</template>
+	<template id="cart" inherit_id="website_sale.cart" name="Shopping Cart">
+	    <xpath expr="//table[@id='cart_products']/thead/tr" position="inside">
+		<th class="text-center" width="100"></th>
+	    </xpath>
+	    <xpath expr="//table[@id='cart_products']/tbody/t/tr" position="inside">
+		<td class="text-center" name="delete">
+		    <a t-attf-href="#" class="btn delete_order_line" data-no-instant="">
+			<i class="fa fa-trash"></i>
+		    </a>
+		</td>
+	    </xpath>
+	</template>
+    </data>
+</openerp>
+
