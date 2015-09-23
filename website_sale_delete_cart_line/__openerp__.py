@@ -3,7 +3,7 @@
     'version': '0.1',
 	'author': 'OpenDev',
 	'sequence': 3,
-	'summary': 'Delete order lines from shopping cart',
+	'summary': 'Shop, cart, order',
     'description': """
     """,
     'category': 'Tools',
