@@ -9,6 +9,6 @@
     'category': 'Tools',
     'depends': ['website_sale'],
     'data': ['templates.xml'],
-    'price':9.0,
+    'price':5.0,
     'currency':'EUR',
 }

@@ -12,6 +12,6 @@
         'data/stripe.xml',
     ],
     'installable': True,
-    'price':49.0,
+    'price':39.0,
     'currency':'EUR',
 }

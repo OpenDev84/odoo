@@ -13,6 +13,6 @@
 		'static/src/xml/lockscreen.xml',
 		'static/src/xml/base.xml',
     ],
-    'price':15.0,
+    'price':9.0,
     'currency':'EUR',
 }
