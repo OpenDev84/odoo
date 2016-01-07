@@ -9,6 +9,7 @@
     'category': 'Tools',
     'depends': ['website_sale'],
     'data': ['templates.xml'],
-    'price':5.0,
+    'price':9.0,
     'currency':'EUR',
+    'license': 'GPL-3',
 }

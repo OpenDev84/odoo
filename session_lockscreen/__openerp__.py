@@ -15,4 +15,5 @@
     ],
     'price':9.0,
     'currency':'EUR',
+    'license': 'GPL-3',
 }

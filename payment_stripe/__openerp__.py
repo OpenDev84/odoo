@@ -14,4 +14,5 @@
     'installable': True,
     'price':39.0,
     'currency':'EUR',
+    'license': 'GPL-3',
 }
